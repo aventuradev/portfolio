@@ -1,0 +1,115 @@
+:root {
+  --white: #fff;
+  --primary: #213b86;
+  --secondary: #431657;
+  --light-primary: #95b0dc;
+  --light-secondary: #8776c3;
+  --light-blue: #c5d4eb;
+  --light-pink: #f5c5d3;
+  --light-gray: #fafafa;
+  --gray: #a3aab6;
+  /* === Transition === */
+  --tran-01: all 0.1s ease;
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+html {
+  font-family: 'Montserrat';
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+
+
+body {
+  margin: 0;
+  color: var(--primary);
+  background:
+    radial-gradient(circle at 10% 10%, #b3c8e5 8%, transparent 40%),
+    radial-gradient(circle at 50% 125%, var(--light-primary) 10%, transparent 60%),
+    radial-gradient(circle at 110% -5%, var(--light-pink) 10%, transparent 60%),
+    radial-gradient(circle at 100% 65%, var(--light-secondary) 10%, transparent 40%);
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-size: 1.6rem;
+}
+
+p {
+  margin:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+} */
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+} */
