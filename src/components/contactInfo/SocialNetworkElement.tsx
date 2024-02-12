@@ -1,11 +1,13 @@
 import { IconType } from "react-icons"
 
-export const SocialNetworkElement = ({ Icon }: {Icon: IconType}) => {
+export const SocialNetworkElement = ({ Icon, URL }: { Icon: IconType, URL: string }) => {
     return (
-        <div className='social-container'>
-            <div className='sn-element'>
-                <Icon className='icon' />
+        <a href={URL} target="_blank">
+            <div className='social-container'>
+                <div className='sn-element'>
+                    <Icon className='icon' />
+                </div>
             </div>
-        </div>
+        </a>
     )
 }

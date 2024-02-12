@@ -29,9 +29,18 @@ export const ContactInfo = () => {
         <div className='profile-ssnn-container'>
           {/* Social Networks */}
           <div className='social-networks'>
-            <SocialNetworkElement Icon={FaLinkedinIn} />
-            <SocialNetworkElement Icon={FaGithub} />
-            <SocialNetworkElement Icon={RiWhatsappFill} />
+            <SocialNetworkElement
+              Icon={FaLinkedinIn}
+              URL='https://linkedin.com/in/antonyventuramorey'
+            />
+            <SocialNetworkElement
+              Icon={FaGithub}
+              URL='https://github.com/aventuradev'
+            />
+            <SocialNetworkElement
+              Icon={RiWhatsappFill}
+              URL='https://wa.me/18493532894'
+            />
           </div>
           {/* Profile Picture */}
           <img src={profilePicture} alt="Antony Ventura Picture" />
