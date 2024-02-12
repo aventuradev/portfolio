@@ -1,13 +1,21 @@
-import profilePicture from '../../assets/profile-picture.jpeg'
+import profilePicture from '../../assets/profile-picture.jpeg';
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
 
-import reactLogo from '../../assets/react-logo.png'
-import JSLogo from '../../assets/javascript-logo.png'
-import TSLogo from '../../assets/typescript-logo.png'
-import HTMLLogo from '../../assets/html-logo.webp'
-import CSSLogo from '../../assets/css-logo.webp'
+import reactLogo from '../../assets/react-logo.png';
+import JSLogo from '../../assets/javascript-logo.png';
+import TSLogo from '../../assets/typescript-logo.png';
+import HTMLLogo from '../../assets/html-logo.webp';
+import CSSLogo from '../../assets/css-logo.webp';
 import FirebaseLogo from '../../assets/firebase-logo.webp'
+import TailwindLogo from '../../assets/tailwind-logo.png'
+import SQLLogo from '../../assets/sql-logo.webp'
+import MongoLogo from '../../assets/mongo-logo.webp'
+import GitLogo from '../../assets/git-logo.png'
+import GithubLogo from '../../assets/github-logo.png'
+import NodeLogo from '../../assets/node-logo.png'
+
+import { SocialNetworkElement } from './SocialNetworkElement';
 
 
 export const ContactInfo = () => {
@@ -18,27 +26,12 @@ export const ContactInfo = () => {
       </div>
 
       <div className="info">
-
         <div className='profile-ssnn-container'>
           {/* Social Networks */}
           <div className='social-networks'>
-            <div className='social-container'>
-              <div className='sn-element'>
-                <FaLinkedinIn className='icon' />
-              </div>
-            </div>
-
-            <div className='social-container'>
-              <div className='sn-element'>
-                <FaGithub className='sn-icon' />
-              </div>
-            </div>
-
-            <div className='social-container'>
-              <div className='sn-element'>
-                <RiWhatsappFill className='sn-icon' />
-              </div>
-            </div>
+            <SocialNetworkElement Icon={FaLinkedinIn} />
+            <SocialNetworkElement Icon={FaGithub} />
+            <SocialNetworkElement Icon={RiWhatsappFill} />
           </div>
           {/* Profile Picture */}
           <img src={profilePicture} alt="Antony Ventura Picture" />
@@ -66,12 +59,12 @@ export const ContactInfo = () => {
           <img src={HTMLLogo} alt="HTML logo" />
           <img src={CSSLogo} alt="CSS logo" />
           <img src={FirebaseLogo} alt="Firebase logo" />
-          <img src={FirebaseLogo} alt="Firebase logo" />
-          <img src={FirebaseLogo} alt="Firebase logo" />
-          <img src={FirebaseLogo} alt="Firebase logo" />
-          <img src={FirebaseLogo} alt="Firebase logo" />
-          <img src={FirebaseLogo} alt="Firebase logo" />
-          <img src={FirebaseLogo} alt="Firebase logo" />
+          <img src={TailwindLogo} alt="Tailwind logo" />
+          <img src={SQLLogo} alt="SQL logo" />
+          <img src={MongoLogo} alt="Mongo logo" />
+          <img src={GitLogo} alt="Git logo" />
+          <img src={GithubLogo} alt="Github logo" />
+          <img src={NodeLogo} alt="Node logo" />
         </div>
       </div>
     </div>
