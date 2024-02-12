@@ -184,6 +184,7 @@
   .loading {
     display: flex;
     align-items: center;
+    
   }
   .dot {
     width: .6rem;
