@@ -120,21 +120,12 @@
 
 .skills .skills-logos {
     margin: 1rem 0 1rem 0;
+    min-height: 11rem;
 }
-
-.skills img {
-    width: 4rem;
-    margin-right: 1.5rem;
-}
-
 
 /* CHAT */
 .chat {
     width: 90rem;
-    position: relative;
-    /* display: flex;
-       flex-direction: column;
-       justify-content: space-between; */
 }
 
 .chat .top {
@@ -158,6 +149,51 @@
 .chat .chat-conversation {
     background: var(--white);
     height: calc(100% - 14rem);
+    max-height: 62rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.chat .chat-conversation .message-bubble{
+    background: var(--primary);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 2rem 0 0 0;
+    position: relative;
+    display: inline-block;
+    max-width: 60rem;
+}
+.chat .chat-conversation .message-bubble::before {
+    content: " ";
+    position: absolute;
+    background-color: var(--primary);
+    width: 1rem;
+    height: 2rem;
+    bottom: -.9rem;
+    left: 3rem;
+    transform: rotate(60deg);
+    transition: var(--tran-03);
+}
+.chat .chat-conversation .message-bubble.you{
+    background: var(--light-secondary);
+    align-self: flex-end;
+    color: var(--white);
+}
+.chat .chat-conversation .message-bubble.you::before {
+    background-color: var(--light-secondary);
+    right: 3rem;
+    left: inherit;
+    transform: rotate(120deg);
+    transition: var(--tran-03);
+}
+
+.typing-loading {
+   font-size: 1.2rem;
+   font-weight: 400;
 }
 
 .chat .bottom {
@@ -166,39 +202,75 @@
     place-items: center;
     border-top: .1rem solid var(--light-blue);
     font-size: 1.8rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.chat .bottom .input-bubble {
+    position: relative;
+    background: var(--white);
+    border-radius: .5rem;
+    padding: .5rem 1.8rem;
+    letter-spacing: 0;
+    color: var(--secondary);
     font-weight: 600;
-    color: var(--gray);
-    letter-spacing: .1rem;
+    margin-bottom: .5rem;
+    cursor: pointer;
+    transition: var(--tran-03);
+}
+.chat .bottom .input-bubble::before {
+    content: " ";
+    position: absolute;
+    background-color: var(--white);
+    width: 1rem;
+    height: 2rem;
+    top: 65%;
+    left: 86%;
+    transform: rotate(50deg);
+    transition: var(--tran-03);
+}
+
+.chat .bottom .input-bubble:hover {
+    background: var(--secondary);
+    color: var(--white);
+}
+.chat .bottom .input-bubble:hover::before {
+    background: var(--secondary);
 }
 
 
-@keyframes bounce {
-    0%, 80%, 100% {
-      transform: scale(0);
-    }
-    40% {
-      transform: scale(1);
-    }
-  }
+@keyframes bouncing {
 
-  .loading {
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+.typing-loading {
     display: flex;
     align-items: center;
-    
-  }
-  .dot {
-    width: .6rem;
-    height: .6rem;
-    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+.dot {
+    width: .3rem;
+    height: .3rem;
+    background-color: var(--secondary);
     border-radius: 50%;
     margin: 0 5px;
-    animation: bounce 1.5s infinite ease-in-out;
-  }
+    animation: bouncing 1.5s infinite ease-in-out;
+}
 
-  .dot:nth-child(2) {
+.dot:nth-child(2) {
     animation-delay: 0.2s;
-  }
+}
 
-  .dot:nth-child(3) {
+.dot:nth-child(3) {
     animation-delay: 0.4s;
-  }
+}

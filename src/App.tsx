@@ -1,10 +1,12 @@
-import { Chat } from "./components/chat/Chat"
-import { ContactInfo } from "./components/contactInfo/ContactInfo"
-import './styles/styles.css'
+import { Chat } from './components/chat/Chat';
+import { ContactInfo } from './components/contactInfo/ContactInfo';
+import './styles/styles.css';
+import 'animate.css';
+
 function App() {
 
   return (
-    <main className="main">
+    <main className='main'>
       <ContactInfo />
       <Chat />
     </main>

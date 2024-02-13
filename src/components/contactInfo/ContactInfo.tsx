@@ -1,26 +1,12 @@
 import profilePicture from '../../assets/profile-picture.jpeg';
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
-
-import reactLogo from '../../assets/react-logo.png';
-import JSLogo from '../../assets/javascript-logo.png';
-import TSLogo from '../../assets/typescript-logo.png';
-import HTMLLogo from '../../assets/html-logo.webp';
-import CSSLogo from '../../assets/css-logo.webp';
-import FirebaseLogo from '../../assets/firebase-logo.webp'
-import TailwindLogo from '../../assets/tailwind-logo.png'
-import SQLLogo from '../../assets/sql-logo.webp'
-import MongoLogo from '../../assets/mongo-logo.webp'
-import GitLogo from '../../assets/git-logo.png'
-import GithubLogo from '../../assets/github-logo.png'
-import NodeLogo from '../../assets/node-logo.png'
-
 import { SocialNetworkElement } from './SocialNetworkElement';
 
 
 export const ContactInfo = () => {
   return (
-    <div className="contat-info card">
+    <div className="contat-info card animate__animated animate__fadeInDown animate__delay-1s animate__slow">
       <div className="top">
         <p>Contact info</p>
       </div>
@@ -62,18 +48,7 @@ export const ContactInfo = () => {
       <div className="skills">
         <p className='info-title'>Skills</p>
         <div className='skills-logos'>
-          <img src={reactLogo} alt="React logo" />
-          <img src={JSLogo} alt="Javascript logo" />
-          <img src={TSLogo} alt="Typescript logo" />
-          <img src={HTMLLogo} alt="HTML logo" />
-          <img src={CSSLogo} alt="CSS logo" />
-          <img src={FirebaseLogo} alt="Firebase logo" />
-          <img src={TailwindLogo} alt="Tailwind logo" />
-          <img src={SQLLogo} alt="SQL logo" />
-          <img src={MongoLogo} alt="Mongo logo" />
-          <img src={GitLogo} alt="Git logo" />
-          <img src={GithubLogo} alt="Github logo" />
-          <img src={NodeLogo} alt="Node logo" />
+          <img src='https://skillicons.dev/icons?i=react,js,typescript,html,css,firebase,tailwind,mongo,git,github,nodejs,express&perline=6' />
         </div>
       </div>
     </div>
