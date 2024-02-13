@@ -168,6 +168,9 @@
     max-width: 60rem;
     align-self: flex-start;
 }
+.chat .chat-conversation .message-bubble:nth-last-child(1){
+    margin-bottom: 5rem;
+}
 .chat .chat-conversation .message-bubble::before {
     content: " ";
     position: absolute;

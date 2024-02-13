@@ -45,7 +45,7 @@ export const Chat = () => {
     if (conversation.length > 1) return;
     await startTyping(5000);
     sendMessage({ response: 'Hello 👋🏾, welcome to my portfolio.' }, 'aventuradev');
-    sendMessage({ response: 'Click the input message bubbles from bellow to know more about me.' }, 'aventuradev', 1000);
+    sendMessage({ response: `Let's chat. Click the input message bubbles  💬  from bellow to know more about me.` }, 'aventuradev', 1000);
   }
 
   useEffect(() => {

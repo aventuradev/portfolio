@@ -16,7 +16,7 @@ export const messages: Message[] = [
         name: 'Projects',
         icon: '💻',
         ask: `Antony, can you show me some of your projects as a frontend developer?`,
-        response: `Of course. You can explore some of the projects I've passionately worked on here:`
+        response: `Of course. Explore some of the projects I've passionately worked on here:`
     },
     {
         name: 'Education',
