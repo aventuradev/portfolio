@@ -43,8 +43,20 @@ body {
 p {
   margin:0;
 }
-
-
+h2,h3{
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+a {
+  text-decoration: none;
+  transition: var(--tran-03);
+}
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+a:hover {
+  color: var(--secondary);
+}
 
 
 

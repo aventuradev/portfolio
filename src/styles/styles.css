@@ -146,6 +146,20 @@
     margin-right: 1rem;
 }
 
+.chat .top .clear-chat-button{
+    border: none;
+    background: var(--white);
+    color: var(--secondary);
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: .4rem;
+    transition: var(--tran-03);
+}
+.chat .top .clear-chat-button:hover{
+    background: var(--secondary);
+    color: var(--white);
+}
+
 .chat .chat-conversation {
     background: var(--white);
     height: calc(100% - 14rem);
@@ -160,7 +174,7 @@
 .chat .chat-conversation .message-bubble{
     background: var(--light-primary);
     color: var(--white);
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 1rem;
     margin: 2rem 0 0 0;
     position: relative;

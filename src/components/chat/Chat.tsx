@@ -1,50 +1,35 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import profilePicture from '../../assets/profile-picture.jpeg';
 import { Typing } from './Typing';
-import { Message, messages } from './messages';
+import { useChat } from '../../hooks/useMessages';
+import { Interaction } from '../../types/types';
+
 export const Chat = () => {
 
-  const [loading, setLoading] = useState(false);
-  const [topic] = useState('');
-  const [conversation, setConversation] = useState([{ sender: '', message: '' }]);
-
+  const { conversation, interactions, isTyping, startTyping, sendMessage,answerMessage, clearChat, } = useChat();
   const chatRef = useRef() as any;
-
-  // const handleTopic = (message: Message): void => {
-  //   startTyping();
-  //   setTopic(topic);
-  // }
-  const startTyping = async (time: number = 1000): Promise<boolean> => {
-    setLoading(true);
-    return await new Promise((resolve) => {
-      setTimeout(() => {
-        setLoading(false);
-        resolve(true)
-      }, time);
-    })
+  
+  const handleClearChat = (): void => {
+    clearChat();
+    handleWelcomeMessage(500, true);
   }
 
-  const sendMessage = (message: Message, sender: string, time: number = 100): void => {
-    if (loading) return;
-    setTimeout(() => {
-      setConversation(prevState => ([
-        ...prevState, { sender, message: message.ask || message.response }
-      ]))
-    }, time);
-    if (sender === 'viewer') {
-      setTimeout(async () => {
-        await startTyping();
-        setConversation(prevState => ([
-          ...prevState, { sender: '', message: message.response }
-        ]))
-      }, time + 500);
-    }
+  const sendAnswerMessage = (message: Interaction, sender: string, time: number = 500): void => {
+    if (isTyping) return;
+    
+    sendMessage(message, sender, time); // Question
+    
+    setTimeout(async () => { 
+      await startTyping();
+      answerMessage(message); // Answer 1 second after question
+    }, time * 2);
   }
 
-  const handleWelcomeMessage = async (): Promise<void> => {
-    if (conversation.length > 1) return;
-    await startTyping(5000);
-    sendMessage({ response: 'Hello 👋🏾, welcome to my portfolio.' }, 'aventuradev');
+  const handleWelcomeMessage = async (time: number = 5000, clear: boolean = false): Promise<void> => {
+    if (!clear && conversation.length > 1) return;
+    await startTyping(time);
+    let firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello 👋🏾, welcome to my portfolio.`;
+    sendMessage({ response: firtMessage}, 'aventuradev');
     sendMessage({ response: `Let's chat. Click the input message bubbles  💬  from bellow to know more about me.` }, 'aventuradev', 1000);
   }
 
@@ -53,7 +38,9 @@ export const Chat = () => {
   }, []);
 
   useEffect(() => {
-    if (chatRef.current) chatRef.current.scrollTop = chatRef.current.scrollHeight;
+    if (chatRef.current) {
+      chatRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [conversation]);
 
   return (
@@ -63,17 +50,17 @@ export const Chat = () => {
           <img src={profilePicture} alt="Antony Ventura Picture" />
           <div>
             <p>Antony Ventura 💻</p>
-            {loading && (<Typing />)}
+            {isTyping && (<Typing />)}
           </div>
         </div>
-        <p>{topic}</p>
+        <button onClick={handleClearChat} className='clear-chat-button'>Clear chat</button>
       </div>
-      <div ref={chatRef} className='chat-conversation'>
+      <div className='chat-conversation'>
         {
           conversation.map((c, idx) => {
             if (c.message) return (
-              <div key={idx} className={`message-bubble ${c.sender} animate__animated animate__fadeInUp animate__faster`}>
-                <p>{c.message}</p>
+              <div ref={chatRef} key={idx} className={`message-bubble ${c.sender} animate__animated animate__fadeInUp animate__faster`}>
+                {c.message}
               </div>
             )
           })
@@ -81,12 +68,12 @@ export const Chat = () => {
       </div>
       <div className='bottom'>
         {
-          messages.map(message => (
+          interactions.map(interaction => (
             <div
-              key={message.name}
-              onClick={() => sendMessage(message, 'viewer')}
+              key={interaction.name}
+              onClick={() => sendAnswerMessage(interaction, 'viewer')}
               className='input-bubble'>
-              {message.name} {message.icon}
+              {interaction.name} {interaction.icon}
             </div>
           ))
         }

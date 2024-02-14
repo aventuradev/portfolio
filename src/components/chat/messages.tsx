@@ -1,9 +1,12 @@
 
+
+import { ReactElement } from "react";
+
 export type Message = {
     name?: string;
     icon?: string;
     ask?: string;
-    response: string;
+    response: string | string[] | ReactElement;
 }
 export const messages: Message[] = [
     {
@@ -16,7 +19,7 @@ export const messages: Message[] = [
         name: 'Projects',
         icon: '💻',
         ask: `Antony, can you show me some of your projects as a frontend developer?`,
-        response: `Of course. Explore some of the projects I've passionately worked on here:`
+        response: <b>Of course. Explore some of the projects I've passionately worked on here:</b>
     },
     {
         name: 'Education',
@@ -27,7 +30,7 @@ export const messages: Message[] = [
     {
         name: 'Certifications',
         icon: '📄',
-        ask: `Nice Antony. I'd like to know more about your work experience.`,
-        response: `Sure. Here is my work experience:`
+        ask: `Can you share details about your certifications?.`,
+        response: `Sure. I've dedicated time to earn certifications such as:`
     },
 ]
