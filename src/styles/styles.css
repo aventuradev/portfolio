@@ -154,6 +154,7 @@
     cursor: pointer;
     border-radius: .4rem;
     transition: var(--tran-03);
+    opacity: .6;
 }
 .chat .top .clear-chat-button:hover{
     background: var(--secondary);
@@ -161,7 +162,8 @@
 }
 
 .chat .chat-conversation {
-    background: var(--white);
+    /* background: var(--white); */
+    background: rgb(254, 254, 254, 0.6);
     height: calc(100% - 14rem);
     max-height: 62rem;
     overflow-y: scroll;
