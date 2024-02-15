@@ -6,9 +6,9 @@ import { Interaction } from '../../types/types';
 
 export const Chat = () => {
 
-  const { conversation, interactions, isTyping, startTyping, sendMessage,answerMessage, clearChat, } = useChat();
+  const { conversation, interactions, isTyping, startTyping, sendMessage, answerMessage, clearChat, } = useChat();
   const chatRef = useRef() as any;
-  
+
   const handleClearChat = (): void => {
     clearChat();
     handleWelcomeMessage(500, true);
@@ -16,10 +16,10 @@ export const Chat = () => {
 
   const sendAnswerMessage = (message: Interaction, sender: string, time: number = 500): void => {
     if (isTyping) return;
-    
+
     sendMessage(message, sender, time); // Question
-    
-    setTimeout(async () => { 
+
+    setTimeout(async () => {
       await startTyping();
       answerMessage(message); // Answer 1 second after question
     }, time * 2);
@@ -28,8 +28,8 @@ export const Chat = () => {
   const handleWelcomeMessage = async (time: number = 5000, clear: boolean = false): Promise<void> => {
     if (!clear && conversation.length > 1) return;
     await startTyping(time);
-    let firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello 👋🏾, welcome to my portfolio.`;
-    sendMessage({ response: firtMessage}, 'aventuradev');
+    const firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello 👋🏾, welcome to my portfolio.`;
+    sendMessage({ response: firtMessage }, 'aventuradev');
     sendMessage({ response: `Let's chat. Click the input message bubbles  💬  from bellow to know more about me.` }, 'aventuradev', 1000);
   }
 

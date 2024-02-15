@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { Interaction, chatMessage } from "../types/types"
+import { Interaction, chatMessage } from "../types/types";
+import meniiuProjectCover from '../assets/meniiu-project.png'
 
 
 export const useChat = () => {
@@ -78,7 +79,15 @@ export const useChat = () => {
             name: 'Projects',
             icon: '💻',
             ask: `Antony, can you show me some of your projects as a frontend developer?`,
-            response: [<p>Of course. Explore some of the projects I've passionately worked on here:</p>]
+            response: [<p>Of course. Explore some of the projects I've passionately worked on here:</p>,
+            <div>
+                <img className='project-image' src={meniiuProjectCover} alt="project image" />
+                <p><b>meniiu</b> is a gastronomic business administrative platform 🍔 🍣 🍝 where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos and descriptions.</p> <br />
+                <p>Businesses can also centralize all communication channels, such as Instagram, Facebook, WhatsApp, etc., so that their customers can contact, make suggestions, follow, locate the business, and place orders that go directly to their WhatsApp.</p><br />
+                <small><i>Stack: <b>React, Redux, Firebase, Bootstrap</b> </i></small><br /><br />
+                <button className='project-button'>Check more info</button>
+            </div>
+            ]
         },
         {
             name: 'Education',
