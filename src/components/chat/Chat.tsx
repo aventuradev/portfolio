@@ -3,6 +3,8 @@ import profilePicture from '../../assets/profile-picture.jpeg';
 import { Typing } from './Typing';
 import { useChat } from '../../hooks/useMessages';
 import { Interaction } from '../../types/types';
+import { FaCircleInfo } from "react-icons/fa6";
+import { RiDeleteBin5Fill } from "react-icons/ri";
 
 export const Chat = () => {
 
@@ -29,7 +31,7 @@ export const Chat = () => {
   const handleWelcomeMessage = async (time: number = 5000, clear: boolean = false): Promise<void> => {
     if (!clear && conversation.length > 1) return;
     await startTyping(time);
-    const firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello I'm Antony 👋🏾, welcome to my portfolio.`;
+    const firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello I'm Antony 👋🏾 a software developer. Welcome to portfolio.`;
     sendMessage({ response: firtMessage }, 'aventuradev');
     sendMessage({ response: `Let's chat. Click the input message bubbles  💬  from bellow to know more about me.` }, 'aventuradev', 1000);
   }
@@ -58,7 +60,8 @@ export const Chat = () => {
             {isTyping && (<Typing />)}
           </div>
         </div>
-        <button onClick={handleClearChat} className='clear-chat-button'>Clear chat</button>
+        <button onClick={handleClearChat} className='clear-chat-button'><RiDeleteBin5Fill size={25} /></button>
+        <button onClick={handleClearChat} className='about-me-button'><FaCircleInfo size={25} /></button>
       </div>
       <div className={`chat-conversation ${openBottom && 'bottom-open'}`}>
         {

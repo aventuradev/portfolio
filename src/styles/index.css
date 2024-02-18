@@ -58,6 +58,20 @@ a:hover {
   color: var(--secondary);
 }
 
+::-webkit-scrollbar {
+  width: 1rem; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--light-secondary); /* Color del thumb (la parte que puedes arrastrar) */
+  border-radius: 6px; /* Bordes redondeados del thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Color de la pista (fondo de la barra de desplazamiento) */
+}
+
+
 
 @media screen and (max-width: 83rem) {
   body{
