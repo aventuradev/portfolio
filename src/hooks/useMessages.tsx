@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Interaction, chatMessage } from "../types/types";
 import meniiuProjectCover from '../assets/meniiu-project.png'
+import meniiuPortalProjectCover from '../assets/meniiu-portal-banner.png'
 
 
 export const useChat = () => {
@@ -79,14 +80,29 @@ export const useChat = () => {
             name: 'Projects',
             icon: '💻',
             ask: `Antony, can you show me some of your projects as a frontend developer?`,
-            response: [<p>Of course. Explore some of the projects I've passionately worked on here:</p>,
-            <div>
-                <img className='project-image' src={meniiuProjectCover} alt="project image" />
-                <p><b>meniiu</b> is a gastronomic business administrative platform 🍔 🍣 🍝 where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos and descriptions.</p> <br />
-                <p>Businesses can also centralize all communication channels, such as Instagram, Facebook, WhatsApp, etc., so that their customers can contact, make suggestions, follow, locate the business, and place orders that go directly to their WhatsApp.</p><br />
-                <small><i>Stack: <b>React, Redux, Firebase, Bootstrap</b> </i></small><br /><br />
-                <button className='project-button'>Check more info</button>
-            </div>
+            response: [
+                <p>Of course. Explore some of the projects I've passionately worked on here:</p>,
+                <div>
+                    <img className='project-image' src={meniiuProjectCover} alt="project image" />
+                    <p><b>meniiu</b> is a gastronomic business administrative platform 🍔 🍣 🍝 where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos and descriptions.</p> <br />
+                    <p>Businesses can also centralize all communication channels, such as Instagram, Facebook, WhatsApp, etc., so that their customers can contact, make suggestions, follow, locate the business, and place orders that go directly to their WhatsApp.</p><br />
+                    <small><i>Stack: <b>React, Redux, Firebase, Bootstrap</b> </i></small><br /><br />
+                    <button className='project-button'>Check more info</button>
+                </div>,
+                <div>
+                    <img className='project-image' src={meniiuPortalProjectCover} alt="project image" />
+                    <p>Business has complete control of their meniiu thanks to the business portal that can be accessed via computer 💻 or mobile 📱 to:</p>
+                    <ul>
+                        <li>Customize how the menu looks.</li>
+                        <li>Modify, add, or remove items.</li>
+                        <li>Modify, add, or remove sections and categories.</li>
+                        <li>Schedule management for order taking.</li>
+                        <li>View monthly reports, and more.</li>
+
+                    </ul>
+                    <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
+                    <button className='project-button'>Check more info</button>
+                </div>
             ]
         },
         {

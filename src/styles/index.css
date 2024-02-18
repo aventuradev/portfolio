@@ -59,7 +59,11 @@ a:hover {
 }
 
 
-
+@media screen and (max-width: 83rem) {
+  body{
+    min-width: 35rem;
+  }
+}
 
 
 

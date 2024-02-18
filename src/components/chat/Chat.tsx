@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import profilePicture from '../../assets/profile-picture.jpeg';
 import { Typing } from './Typing';
 import { useChat } from '../../hooks/useMessages';
@@ -7,6 +7,7 @@ import { Interaction } from '../../types/types';
 export const Chat = () => {
 
   const { conversation, interactions, isTyping, startTyping, sendMessage, answerMessage, clearChat, } = useChat();
+  const [openBottom, setOpenBottom] = useState<boolean>(false);
   const chatRef = useRef() as any;
 
   const handleClearChat = (): void => {
@@ -28,18 +29,22 @@ export const Chat = () => {
   const handleWelcomeMessage = async (time: number = 5000, clear: boolean = false): Promise<void> => {
     if (!clear && conversation.length > 1) return;
     await startTyping(time);
-    const firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello 👋🏾, welcome to my portfolio.`;
+    const firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello I'm Antony 👋🏾, welcome to my portfolio.`;
     sendMessage({ response: firtMessage }, 'aventuradev');
     sendMessage({ response: `Let's chat. Click the input message bubbles  💬  from bellow to know more about me.` }, 'aventuradev', 1000);
   }
-
+  const handleOpenBottom = (): void => {
+    setOpenBottom(!openBottom);
+  }
   useEffect(() => {
     handleWelcomeMessage();
   }, []);
 
   useEffect(() => {
     if (chatRef.current) {
-      chatRef.current.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        chatRef.current.scrollIntoView({ behavior: 'smooth' });
+      }, 500);
     }
   }, [conversation]);
 
@@ -55,7 +60,7 @@ export const Chat = () => {
         </div>
         <button onClick={handleClearChat} className='clear-chat-button'>Clear chat</button>
       </div>
-      <div className='chat-conversation'>
+      <div className={`chat-conversation ${openBottom && 'bottom-open'}`}>
         {
           conversation.map((c, idx) => {
             if (c.message) return (
@@ -66,17 +71,26 @@ export const Chat = () => {
           })
         }
       </div>
-      <div className='bottom'>
+      <div className={`bottom ${openBottom && 'open'}`}>
         {
           interactions.map(interaction => (
             <div
               key={interaction.name}
-              onClick={() => sendAnswerMessage(interaction, 'viewer')}
+              onClick={() => {sendAnswerMessage(interaction, 'viewer'); handleOpenBottom()}}
               className='input-bubble'>
               {interaction.name} {interaction.icon}
             </div>
           ))
         }
+        <div className='bottom-actions'>
+          <div className='bottom-actions-close'>
+            <button onClick={handleOpenBottom}>Let's chat 💬</button>
+          </div>
+          <div className='bottom-actions-open'>
+            <button onClick={()=> { handleClearChat(); handleOpenBottom(); }}>Clear chat 🧹</button>
+            <button onClick={handleOpenBottom}>Close  🔽</button>
+          </div>
+        </div>
       </div>
     </div>
   )
