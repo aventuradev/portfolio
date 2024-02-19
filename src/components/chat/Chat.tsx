@@ -60,7 +60,7 @@ export const Chat = () => {
             {isTyping && (<Typing />)}
           </div>
         </div>
-        <button onClick={handleClearChat} className='clear-chat-button'><RiDeleteBin5Fill size={25} /></button>
+        <button onClick={handleClearChat} className='clear-chat-button'><abbr title="Clear chat"><RiDeleteBin5Fill size={25} /></abbr></button>
         <button onClick={handleClearChat} className='about-me-button'><FaCircleInfo size={25} /></button>
       </div>
       <div className={`chat-conversation ${openBottom && 'bottom-open'}`}>
