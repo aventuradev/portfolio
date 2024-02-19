@@ -8,6 +8,7 @@ export const useChat = () => {
 
     const [conversation, setConversation] = useState<chatMessage[]>([{ sender: '', message: '' }]);
     const [isTyping, setIsTyping] = useState(false);
+    const [showProjectModal, setShowProjectModal] = useState<boolean>(false);
 
     const startTyping = async (time: number = 1000): Promise<boolean> => {
         setIsTyping(true);
@@ -84,14 +85,14 @@ export const useChat = () => {
                 <p>Of course. Explore some of the projects I've passionately worked on here:</p>,
                 <div>
                     <img className='project-image' src={meniiuProjectCover} alt="project image" />
-                    <p><b>meniiu</b> is a gastronomic business administrative platform 🍔 🍣 🍝 where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos and descriptions.</p> <br />
+                    <p><b>meniiu</b> is an administrative web platform for gastronomic business 🍔 🍣 🍝 where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos and descriptions.</p> <br />
                     <p>Businesses can also centralize all communication channels, such as Instagram, Facebook, WhatsApp, etc., so that their customers can contact, make suggestions, follow, locate the business, and place orders that go directly to their WhatsApp.</p><br />
                     <small><i>Stack: <b>React, Redux, Firebase, Bootstrap</b> </i></small><br /><br />
-                    <button className='project-button'>Check more info</button>
+                    <button className='project-button' onClick={()=>setShowProjectModal(!showProjectModal)}>Check more info</button>
                 </div>,
                 <div>
                     <img className='project-image' src={meniiuPortalProjectCover} alt="project image" />
-                    <p>Business has complete control of their meniiu thanks to the business portal that can be accessed via computer 💻 or mobile 📱 to:</p>
+                    <p>Business has complete control of their meniiu thanks to the <b>meniiu Business Portal</b> that can be accessed via computer 💻 or mobile 📱 to:</p>
                     <ul>
                         <li>Customize how the menu looks.</li>
                         <li>Modify, add, or remove items.</li>
@@ -101,7 +102,7 @@ export const useChat = () => {
 
                     </ul>
                     <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
-                    <button className='project-button'>Check more info</button>
+                    <button className='project-button' onClick={()=>setShowProjectModal(!showProjectModal)}>Check more info</button>
                 </div>
             ]
         },
@@ -152,6 +153,9 @@ export const useChat = () => {
         isTyping,
         sendMessage,
         answerMessage,
-        clearChat
+        clearChat,
+        showProjectModal,
+        setShowProjectModal
+
     }
 }

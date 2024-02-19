@@ -5,11 +5,13 @@ import { useChat } from '../../hooks/useMessages';
 import { Interaction } from '../../types/types';
 import { FaCircleInfo } from "react-icons/fa6";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import { ProjectModal } from './ProjectModal';
 
 export const Chat = () => {
 
-  const { conversation, interactions, isTyping, startTyping, sendMessage, answerMessage, clearChat, } = useChat();
+  const { conversation, interactions, isTyping, startTyping, sendMessage, answerMessage, clearChat,showProjectModal, setShowProjectModal } = useChat();
   const [openBottom, setOpenBottom] = useState<boolean>(false);
+
   const chatRef = useRef() as any;
 
   const handleClearChat = (): void => {
@@ -52,6 +54,7 @@ export const Chat = () => {
 
   return (
     <div className="chat card animate__animated animate__fadeInUp animate__delay-2s">
+      <ProjectModal show={showProjectModal} setShow={setShowProjectModal} />
       <div className="top">
         <div className='chat-contact-info'>
           <img src={profilePicture} alt="Antony Ventura Picture" />
