@@ -4,11 +4,12 @@ import meniiuProjectCover from '../assets/meniiu-project.png'
 import meniiuPortalProjectCover from '../assets/meniiu-portal-banner.png'
 
 
-export const useChat = () => {
+export const useChat = (chatRef: React.MutableRefObject<HTMLDivElement>) => {
 
     const [conversation, setConversation] = useState<chatMessage[]>([{ sender: '', message: '' }]);
     const [isTyping, setIsTyping] = useState(false);
     const [showProjectModal, setShowProjectModal] = useState<boolean>(false);
+    const [project, setProject] = useState<string>('');
 
     const startTyping = async (time: number = 1000): Promise<boolean> => {
         setIsTyping(true);
@@ -25,6 +26,7 @@ export const useChat = () => {
             setConversation(prevState => ([
                 ...prevState, { sender, message: message.ask || message.response }
             ]))
+            scrollToMessage()
         }, time);
     }
 
@@ -39,8 +41,17 @@ export const useChat = () => {
                 setConversation(prevState => ([
                     ...prevState, { sender: '', message: response }
                 ]))
+                scrollToMessage()
             }, timer);
             timer += 1000;
+        }
+    }
+
+    const scrollToMessage = (): void => {
+        if (chatRef.current) {
+            setTimeout(() => {
+                chatRef.current.scrollIntoView({ behavior: 'smooth' });
+            }, 500);
         }
     }
 
@@ -88,7 +99,7 @@ export const useChat = () => {
                     <p><b>meniiu</b> is an administrative web platform for gastronomic business 🍔 🍣 🍝 where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos and descriptions.</p> <br />
                     <p>Businesses can also centralize all communication channels, such as Instagram, Facebook, WhatsApp, etc., so that their customers can contact, make suggestions, follow, locate the business, and place orders that go directly to their WhatsApp.</p><br />
                     <small><i>Stack: <b>React, Redux, Firebase, Bootstrap</b> </i></small><br /><br />
-                    <button className='project-button' onClick={()=>setShowProjectModal(!showProjectModal)}>Check more info</button>
+                    <button className='project-button' onClick={() => { setShowProjectModal(!showProjectModal); setProject('meniiu') }}>Check more info</button>
                 </div>,
                 <div>
                     <img className='project-image' src={meniiuPortalProjectCover} alt="project image" />
@@ -102,7 +113,7 @@ export const useChat = () => {
 
                     </ul>
                     <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
-                    <button className='project-button' onClick={()=>setShowProjectModal(!showProjectModal)}>Check more info</button>
+                    <button className='project-button' onClick={() => { setShowProjectModal(!showProjectModal); setProject('portal') }}>Check more info</button>
                 </div>
             ]
         },
@@ -146,16 +157,11 @@ export const useChat = () => {
 
 
     return {
-        interactions,
-        conversation,
-        setConversation,
-        startTyping,
-        isTyping,
-        sendMessage,
-        answerMessage,
+        interactions,conversation,
+        startTyping, isTyping,
+        sendMessage,answerMessage,
         clearChat,
-        showProjectModal,
-        setShowProjectModal
-
+        project,setProject,
+        showProjectModal,setShowProjectModal
     }
 }

@@ -1,18 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
 import profilePicture from '../../assets/profile-picture.jpeg';
 import { Typing } from './Typing';
-import { useChat } from '../../hooks/useMessages';
+import { useChat } from '../../hooks/useChat';
 import { Interaction } from '../../types/types';
 import { FaCircleInfo } from "react-icons/fa6";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { ProjectModal } from './ProjectModal';
+import { projectMeniiu, projectMeniiuPortal } from './Projects';
 
 export const Chat = () => {
-
-  const { conversation, interactions, isTyping, startTyping, sendMessage, answerMessage, clearChat, showProjectModal, setShowProjectModal } = useChat();
-  const [openBottom, setOpenBottom] = useState<boolean>(false);
-
   const chatRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+  const {
+    conversation, interactions,
+    isTyping, startTyping,
+    sendMessage, answerMessage,
+    clearChat,
+    project, setProject,
+    showProjectModal, setShowProjectModal
+  } = useChat(chatRef);
+
+  const [openBottom, setOpenBottom] = useState<boolean>(false);
 
   const handleClearChat = (): void => {
     clearChat();
@@ -45,17 +52,8 @@ export const Chat = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    if (chatRef.current) {
-      setTimeout(() => {
-        chatRef.current.scrollIntoView({ behavior: 'smooth' });
-      }, 500);
-    }
-  }, [conversation]);
-
   return (
     <div className="chat card animate__animated animate__fadeInUp animate__delay-2s">
-      <ProjectModal show={showProjectModal} setShow={setShowProjectModal} />
       <div className="top">
         <div className='chat-contact-info'>
           <img src={profilePicture} alt="Antony Ventura Picture" />
@@ -65,8 +63,9 @@ export const Chat = () => {
           </div>
         </div>
         <button onClick={handleClearChat} className='clear-chat-button'><abbr title="Clear chat"><RiDeleteBin5Fill size={25} /></abbr></button>
-        <button onClick={()=>{}} className='about-me-button'><FaCircleInfo size={25} /></button>
+        <button onClick={() => { }} className='about-me-button'><FaCircleInfo size={25} /></button>
       </div>
+
       <div className={`chat-conversation ${openBottom && 'bottom-open'}`}>
         {
           conversation.map((c, idx) => {
@@ -78,6 +77,7 @@ export const Chat = () => {
           })
         }
       </div>
+
       <div className={`bottom ${openBottom && 'open'}`}>
         {
           interactions.map(interaction => (
@@ -99,6 +99,14 @@ export const Chat = () => {
           </div>
         </div>
       </div>
+
+      <ProjectModal
+        show={showProjectModal}
+        setShow={setShowProjectModal}
+        setProject={setProject} title={project === 'meniiu' ? projectMeniiu()[0] : projectMeniiuPortal()[0]}
+      >
+        {project === 'meniiu' ? projectMeniiu()[1] : projectMeniiuPortal()[1]}
+      </ProjectModal>
     </div>
   )
 }
