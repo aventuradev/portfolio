@@ -34,10 +34,10 @@ export const useChat = () => {
 
     const answerMessage = (message: Interaction): void => {
         let timer: number = 0;
-        for (let res of message.response) {
+        for (const response of message.response) {
             setTimeout(() => {
                 setConversation(prevState => ([
-                    ...prevState, { sender: '', message: res }
+                    ...prevState, { sender: '', message: response }
                 ]))
             }, timer);
             timer += 1000;
@@ -54,7 +54,7 @@ export const useChat = () => {
                 <div>
                     <h2>👨🏾‍💻 Web Software Developer</h2>
                     <p>Instituto Dominicano de las Telecomunicaciones - INDOTEL</p>
-                    <small>🗓️ Oct 2020 - Present | 📍 Santo Domingo, Domincan Republic</small><br /><br />
+                    <small>🗓️ Oct 2020 - Present | 📍 Santo Domingo, Dominican Republic</small><br /><br />
                     <p>Some project that I've worked on:</p><br />
                     <b>🖥️ Intranet Project— July, 2022 - October, 2023</b>
                     <ul>

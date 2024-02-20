@@ -9,10 +9,10 @@ import { ProjectModal } from './ProjectModal';
 
 export const Chat = () => {
 
-  const { conversation, interactions, isTyping, startTyping, sendMessage, answerMessage, clearChat,showProjectModal, setShowProjectModal } = useChat();
+  const { conversation, interactions, isTyping, startTyping, sendMessage, answerMessage, clearChat, showProjectModal, setShowProjectModal } = useChat();
   const [openBottom, setOpenBottom] = useState<boolean>(false);
 
-  const chatRef = useRef() as any;
+  const chatRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   const handleClearChat = (): void => {
     clearChat();
@@ -23,11 +23,11 @@ export const Chat = () => {
     if (isTyping) return;
 
     sendMessage(message, sender, time); // Question
+    startTyping(time * 4);
 
     setTimeout(async () => {
-      await startTyping();
       answerMessage(message); // Answer 1 second after question
-    }, time * 2);
+    }, time * 4);
   }
 
   const handleWelcomeMessage = async (time: number = 5000, clear: boolean = false): Promise<void> => {
@@ -42,6 +42,7 @@ export const Chat = () => {
   }
   useEffect(() => {
     handleWelcomeMessage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -64,7 +65,7 @@ export const Chat = () => {
           </div>
         </div>
         <button onClick={handleClearChat} className='clear-chat-button'><abbr title="Clear chat"><RiDeleteBin5Fill size={25} /></abbr></button>
-        <button onClick={handleClearChat} className='about-me-button'><FaCircleInfo size={25} /></button>
+        <button onClick={()=>{}} className='about-me-button'><FaCircleInfo size={25} /></button>
       </div>
       <div className={`chat-conversation ${openBottom && 'bottom-open'}`}>
         {
@@ -82,7 +83,7 @@ export const Chat = () => {
           interactions.map(interaction => (
             <div
               key={interaction.name}
-              onClick={() => {sendAnswerMessage(interaction, 'viewer'); handleOpenBottom()}}
+              onClick={() => { sendAnswerMessage(interaction, 'viewer'); handleOpenBottom() }}
               className='input-bubble'>
               {interaction.name} {interaction.icon}
             </div>
@@ -93,7 +94,7 @@ export const Chat = () => {
             <button onClick={handleOpenBottom}>Let's chat 💬</button>
           </div>
           <div className='bottom-actions-open'>
-            <button onClick={()=> { handleClearChat(); handleOpenBottom(); }}>Clear chat 🧹</button>
+            <button onClick={() => { handleClearChat(); handleOpenBottom(); }}>Clear chat 🧹</button>
             <button onClick={handleOpenBottom}>Close  🔽</button>
           </div>
         </div>

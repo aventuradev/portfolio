@@ -327,6 +327,95 @@
     color: var(--secondary);
 }
 
+
+.project-modal {
+    position: absolute;
+    background: var(--white);
+    width: .1%;
+    height: .1%;
+    bottom: 8.4rem;
+    left: 0;
+    z-index: 2;
+    border-radius: 1rem;
+    transition: var(--tran-05);
+    opacity: 0;
+    overflow-y: scroll;
+}
+
+.project-modal .modal-content {
+    display: none;
+    opacity: 0;
+    transform: var(--tran-05);
+}
+
+.project-modal.show {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: none;
+}
+
+.project-modal.show .top {
+    background: var(--light-gray);
+}
+
+.project-modal.show .top .modal-close-button {
+    position: absolute;
+    right: 2rem;
+    border: none;
+    background: transparent;
+    color: var(--light-secondary);
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: .4rem;
+    transition: var(--tran-04);
+    font-size: 2.6rem;
+}
+
+.project-modal.show .modal-content {
+    padding: 2rem 3rem;
+    display: block;
+    opacity: 1;
+    height: 65rem;
+    overflow: scroll;
+}
+
+.project-modal.show .modal-content .project-features {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    max-width: 70rem;
+
+}
+
+.project-modal.show .modal-content .project-features .feature {
+    margin-top: 1.5rem;
+}
+
+.project-modal.show .modal-content .project-features .feature .feature-images {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.project-modal.show .modal-content .project-features .feature .feature-images img {
+    width: 18rem;
+
+}
+
+.project-modal.show::-webkit-scrollbar {
+    width: 0;
+}
+
+.project-modal.show .modal-content::-webkit-scrollbar {
+    width: 1rem;
+}
+
 /* Mobile Media Queries */
 
 @media screen and (max-width: 83rem) {
@@ -366,14 +455,14 @@
     }
 
     .chat .chat-conversation.bottom-open {
-        height: 25rem;
+        height: 30rem;
     }
 
     .chat .bottom.open {
         height: 30rem;
         display: flex;
         flex-direction: column;
-        padding: 2rem 0;
+        padding-top: 2rem;
     }
 
     .chat .bottom.open .input-bubble {
@@ -400,65 +489,15 @@
         flex-direction: column;
     }
 
+    .project-modal.show .modal-content {
+        padding: 2rem 3rem;
+        display: block;
+        opacity: 1;
+        height: 59rem;
+        overflow: scroll;
+    }
 }
 
-.project-modal{
-    position: absolute;
-    background: var(--white);
-    content: " ";
-    width: .1%;
-    height: .1%;
-    bottom: 8.4rem;
-    left: 0;
-    z-index: 2;
-    border-radius: 1rem;
-    transition: var(--tran-05);
-    opacity: 0;
-    overflow-y: scroll;
-}
-.project-modal .modal-content{
-    display: none;
-    opacity: 0;
-    transform: var(--tran-05);
-}
-
-.project-modal.show {
-    opacity: 1;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: none;
-    
-}
-.project-modal.show .modal-content{
-    padding: 2rem 3rem;
-    display: block;
-    opacity: 1;    
-}
-
-.project-modal.show .modal-content .project-features{
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1.5rem;
-    margin-left: 2rem;
-    max-width: 70rem;
-    
-}
-.project-modal.show .modal-content .project-features .feature{
-    margin-top: 1.5rem;
-}
-.project-modal.show .modal-content .project-features .feature .feature-images{
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap ;
-    gap: 2rem;
-}
-
-.project-modal.show .modal-content .project-features .feature .feature-images img{
-    width: 18rem;
-}
 /* @media screen and (width >= 1000rem) {
     .contat-info {
         display: none;
