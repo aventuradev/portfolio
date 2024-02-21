@@ -407,6 +407,10 @@
     width: 18rem;
 
 }
+.project-modal .project-image{
+    width: 100%;
+    margin-bottom: 1rem;
+}
 
 .project-modal.show::-webkit-scrollbar {
     width: 0;
@@ -415,6 +419,7 @@
 .project-modal.show .modal-content::-webkit-scrollbar {
     width: 1rem;
 }
+
 
 /* Mobile Media Queries */
 

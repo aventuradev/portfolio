@@ -40,9 +40,9 @@ export const Chat = () => {
   const handleWelcomeMessage = async (time: number = 5000, clear: boolean = false): Promise<void> => {
     if (!clear && conversation.length > 1) return;
     await startTyping(time);
-    const firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello I'm Antony 👋🏾 a software developer. Welcome to portfolio.`;
+    const firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello  👋🏾  I'm Antony, a software developer. Welcome to my portfolio.`;
     sendMessage({ response: firtMessage }, 'aventuradev');
-    sendMessage({ response: `Let's chat. Click the input message bubbles  💬  from bellow to know more about me.` }, 'aventuradev', 1000);
+    sendMessage({ response: `Let's chat! Click the input message bubbles  💬  from bellow to know more about me.` }, 'aventuradev', 1000);
   }
   const handleOpenBottom = (): void => {
     setOpenBottom(!openBottom);
