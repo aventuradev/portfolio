@@ -3,23 +3,19 @@
     gap: 2.5rem;
 }
 
-.main .card {
+/* CONTACT INFO */
+.contact-info {
     background: rgb(250, 250, 250, .6);
     border-radius: 1rem;
-    min-width: 35rem;
-}
-
-/* CONTACT INFO */
-.contat-info {
     max-width: 40rem;
     height: 100%;
 }
 
-.contat-info .profile-ssnn-container {
+.contact-info .profile-ssnn-container {
     display: flex;
 }
 
-.contat-info .top,
+.contact-info .top,
 .chat .top {
     height: 6rem;
     display: grid;
@@ -31,7 +27,7 @@
     letter-spacing: .1rem;
 }
 
-.contat-info .info {
+.contact-info .info {
     display: grid;
     place-items: center;
     padding: 3rem 0;
@@ -39,7 +35,7 @@
     letter-spacing: .1rem;
 }
 
-.contat-info .info img {
+.contact-info .info img {
     border-radius: 50%;
     width: 15rem;
     border: 1.2rem solid var(--white);
@@ -47,12 +43,12 @@
     margin-right: 5rem;
 }
 
-.contat-info .name {
+.contact-info .name {
     font-size: 2.4rem;
     font-weight: 800;
 }
 
-.contat-info .rol {
+.contact-info .rol {
     letter-spacing: .50rem;
     font-size: 1.4rem;
 }
@@ -101,8 +97,8 @@
     /* font-size: 2.8rem; */
 }
 
-.contat-info .about,
-.contat-info .skills {
+.contact-info .about,
+.contact-info .skills {
     padding: 2rem 3rem;
     font-size: 1.5rem;
 }
@@ -123,9 +119,16 @@
     min-height: 11rem;
 }
 
+.skills .skills-logos img {
+    width: 100%;
+}
+
 /* CHAT */
 .chat {
+    background: rgb(250, 250, 250, .6);
+    border-radius: 1rem;
     width: 90rem;
+    min-width: 35rem;
 }
 
 .chat .top {
@@ -407,7 +410,8 @@
     width: 18rem;
 
 }
-.project-modal .project-image{
+
+.project-modal .project-image {
     width: 100%;
     margin-bottom: 1rem;
 }
@@ -426,11 +430,45 @@
 @media screen and (max-width: 83rem) {
     .main {
         height: 100vh;
+        width: 100%;
         display: flex;
         justify-content: center;
     }
 
-    .contat-info,
+    .contact-info {
+        width: 82%;
+        height: 100vh;
+        border-radius: 0;
+        transition: var(--tran-04);
+        position: absolute;
+        left: -40rem;
+        /* pointer-events: none; */
+        background: var(--light-gray);
+        z-index: 50;
+    }
+
+    .contact-info.open {
+        left: 0;
+        /* pointer-events:fill; */
+    }
+
+    .overlay {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        z-index: 10;
+        background: var(--black);
+    }
+    .overlay.open {
+        opacity: .7;
+        position: absolute;
+        z-index: 1;
+        pointer-events: fill;
+        /* cursor: pointer; */
+    }
+
     .clear-chat-button,
     .chat .bottom .input-bubble,
     .chat .bottom .bottom-actions .bottom-actions-open,
@@ -501,14 +539,8 @@
         height: 59rem;
         overflow: scroll;
     }
+
 }
-
-/* @media screen and (width >= 1000rem) {
-    .contat-info {
-        display: none;
-    }
-}  */
-
 
 @keyframes bouncing {
 

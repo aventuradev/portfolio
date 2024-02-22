@@ -47,6 +47,14 @@ export const Chat = () => {
   const handleOpenBottom = (): void => {
     setOpenBottom(!openBottom);
   }
+
+  const handleOpenInfo = () => {
+    const sideBanner: Element | null = document.querySelector('.contact-info');
+    sideBanner?.classList.toggle('open');
+    const overlay: Element | null = document.querySelector('.overlay');
+    overlay?.classList.toggle('open');
+  }
+
   useEffect(() => {
     handleWelcomeMessage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -63,7 +71,7 @@ export const Chat = () => {
           </div>
         </div>
         <button onClick={handleClearChat} className='clear-chat-button'><abbr title="Clear chat"><RiDeleteBin5Fill size={25} /></abbr></button>
-        <button onClick={() => { }} className='about-me-button'><FaCircleInfo size={25} /></button>
+        <button onClick={handleOpenInfo} className='about-me-button'><FaCircleInfo size={25} /></button>
       </div>
 
       <div className={`chat-conversation ${openBottom && 'bottom-open'}`}>
