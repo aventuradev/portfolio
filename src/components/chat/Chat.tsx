@@ -40,7 +40,7 @@ export const Chat = () => {
   const handleWelcomeMessage = async (time: number = 5000, clear: boolean = false): Promise<void> => {
     if (!clear && conversation.length > 1) return;
     await startTyping(time);
-    const firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello  👋🏾  I'm Antony, a software developer. Welcome to my portfolio.`;
+    const firtMessage: string = clear ? `Okay, from the beginning again.` : `Hello, I'm Antony 👋🏾 a frontend developer. Welcome to my portfolio.`;
     sendMessage({ response: firtMessage }, 'aventuradev');
     sendMessage({ response: `Let's chat! Click the input message bubbles  💬  from bellow to know more about me.` }, 'aventuradev', 1000);
   }
@@ -56,12 +56,12 @@ export const Chat = () => {
   }
 
   useEffect(() => {
-    handleWelcomeMessage();
+    handleWelcomeMessage(3000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="chat card animate__animated animate__fadeInUp animate__delay-2s">
+    <div className="chat animate__animated animate__fadeInUp animate__delay-1s">
       <div className="top">
         <div className='chat-contact-info'>
           <img src={profilePicture} alt="Antony Ventura Picture" />

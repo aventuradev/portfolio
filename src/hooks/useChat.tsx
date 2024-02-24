@@ -96,8 +96,8 @@ export const useChat = (chatRef: React.MutableRefObject<HTMLDivElement>) => {
                 <p>Of course. Explore some of the projects I've passionately worked on here:</p>,
                 <div>
                     <img className='project-image' src={meniiuProjectCover} alt="project image" />
-                    <p><b>meniiu</b> is an administrative web platform for gastronomic business 🍔 🍣 🍝 where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos and descriptions.</p> <br />
-                    <p>Businesses can also centralize all communication channels, such as Instagram, Facebook, WhatsApp, etc., so that their customers can contact, make suggestions, follow, locate the business, and place orders that go directly to their WhatsApp.</p><br />
+                    <p><b>meniiu</b> is an administrative web platform for gastronomic 🍔 🍣 🍝 business, optimized and focused for intuitive and efficient use on mobile devices, where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos, descriptions and more.</p> <br />
+                    <p><b>Currently used by multiple businesses</b>, handling the reception of hundreds of orders from their customers monthly and taking advantage of its multiple features. <a href="https://meniiu.com/#/Demo" target="_blank"><b>👉🏾 Try Demo here</b>.</a></p> <br />
                     <small><i>Stack: <b>React, Redux, Firebase, Bootstrap</b> </i></small><br /><br />
                     <button className='project-button' onClick={() => { setShowProjectModal(!showProjectModal); setProject('meniiu') }}>Check more info</button>
                 </div>,
@@ -110,8 +110,8 @@ export const useChat = (chatRef: React.MutableRefObject<HTMLDivElement>) => {
                         <li>Modify, add, or remove sections and categories.</li>
                         <li>Schedule management for order taking.</li>
                         <li>View monthly reports, and more.</li>
-
                     </ul>
+                    <a href="https://meniiu.github.io" target="_blank"><b>👉🏾 Check portal here</b>.</a><br/><br/>
                     <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
                     <button className='project-button' onClick={() => { setShowProjectModal(!showProjectModal); setProject('portal') }}>Check more info</button>
                 </div>

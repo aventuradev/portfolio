@@ -13,7 +13,7 @@ export const ContactInfo = () => {
   }
   return (
     <>
-      <div className="contact-info animate__animated animate__fadeInDown animate__delay-1s animate__slow">
+      <div className="contact-info animate__animated animate__fadeIn animate__delay-1s">
         <div className="top">
           <p>Contact info</p>
         </div>
@@ -48,7 +48,7 @@ export const ContactInfo = () => {
         {/* ABOUT  */}
         <div className="about">
           <p className='info-title'>About</p>
-          <p>I'm a <b>Frontend Developer</b> with 4 years of experience developing and designing web apps using <b>Javascript and React</b>, also with backend and database knowledge using <b>NodeJs, SQL Server and Firebase.</b> </p>
+          <p><b>With 4 years of experience </b>developing and designing web apps using <b>Javascript and React</b>, also with backend and database knowledge using <b>NodeJs, SQL Server and Firebase.</b> </p>
         </div>
         <div className='divider'></div>
         {/* SKILLS */}

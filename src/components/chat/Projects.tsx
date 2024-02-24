@@ -19,6 +19,7 @@ export const projectMeniiu = (): [string, JSX.Element] => {
                     <div className="feature-images">
                         <img src="https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2F073892cc-4e30-4051-bfa0-882a87527d61%2FUntitled.png?table=block&id=a8fa832c-fe5c-4e2d-aa64-798890de0b42&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=580&userId=&cache=v2" alt="" />
                         <img src='https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2F661fd5db-a3bf-4a92-b5e7-1c8576a4a2d8%2FUntitled.png?table=block&id=d961b40e-cac9-4399-bc0b-40fd9d9264a2&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=670&userId=&cache=v2' alt="" />
+                        <img src='https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2Fc5b0eabd-0c51-4407-8d9c-b45e4422e500%2FUntitled.png?table=block&id=cb0ed2ff-6c7e-497a-ba20-ec863e468374&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=780&userId=&cache=v2' alt="" />
                     </div>
                 </div>
                 <div className="feature">
@@ -31,17 +32,11 @@ export const projectMeniiu = (): [string, JSX.Element] => {
                     </div>
                 </div>
                 <div className="feature">
-                    <b>ℹ️ Information in one place</b><br />
-                    <small>Centralized information so that customers can easily find all the information they need about the business.</small>
+                    <b>ℹ️ Information in one place and 📩 Suggestion mailbox</b><br />
+                    <small>Centralized information so that customers can easily find all the information they need about the business. And the suggestions mailbox allows business owners to receive direct feedback through email, which is invaluable for improvement and growth.</small>
                     <div className="feature-images">
                         <img src="https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2Fdabab87c-cd3e-4e41-a823-3158836d828e%2FUntitled.png?table=block&id=a38e21fe-8c4d-40a5-9626-0def135bd462&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=1500&userId=&cache=v2" alt="" />
                         <img src='https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2Ff7bdcd4b-874b-4f80-974e-d5840f9a2c08%2FUntitled.png?table=block&id=a8fb4b4e-2b3f-4588-9040-da9cf23c6917&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=1490&userId=&cache=v2' alt="" />
-                    </div>
-                </div>
-                <div className="feature">
-                    <b>📩 Suggestion mailbox</b><br />
-                    <small>This functionality allows business owners to receive direct feedback through email, which is invaluable for improvement and growth.</small>
-                    <div className="feature-images">
                         <img src='https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2F43a9c26d-5591-4b38-a5cc-7fae85174772%2FUntitled.png?table=block&id=6948e653-3b2f-4e4e-8324-c97bdee0b808&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=670&userId=&cache=v2' alt="" />
                     </div>
                 </div>
@@ -75,7 +70,7 @@ export const projectMeniiuPortal = (): [string, JSX.Element] => {
                         <img src="https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2F7feecb5f-94f9-4d5d-89ca-228f9213bf7f%2FUntitled.png?table=block&id=79bfc0ae-94e0-476a-8d1e-91b859fa49e5&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=1490&userId=&cache=v2" alt="" />
                         <img src='https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2F7d45a7ef-af89-4240-bfc2-ec21fee433c0%2FUntitled.png?table=block&id=2f7f206e-62cd-4a40-b83b-d3cb2d3743d6&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=1480&userId=&cache=v2' alt="" />
                         <img src='https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2Fc181c7d1-1b50-463d-aed2-1a6c876b571b%2FUntitled.png?table=block&id=55968008-b4bf-4b9a-bb6c-dfd47cfbedad&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=1490&userId=&cache=v2' alt="" />
-                        <img src='https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2F8ff78f93-94de-4968-b13b-1cb6d098b23a%2FUntitled.png?table=block&id=71418f83-9880-48f0-9f76-1c73c09bfd4b&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=1490&userId=&cache=v2' alt="" />
+                        <img src='https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2F180b8733-7b2d-4b8c-903e-b8b0f167092c%2FUntitled.png?table=block&id=ecad697c-523c-4c15-905d-ba028200428c&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=1490&userId=&cache=v2' alt="" />
                     </div>
                 </div>
                 <div className="feature">
