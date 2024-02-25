@@ -51,7 +51,6 @@ export const ContactInfo = () => {
           <p><b>With 4 years of experience </b>developing and designing web apps using <b>Javascript and React</b>, also with backend and database knowledge using <b>NodeJs, SQL Server and Firebase.</b> </p>
         </div>
         <div className='divider'></div>
-        {/* SKILLS */}
         <div className="skills">
           <p className='info-title'>Skills</p>
           <div className='skills-logos'>

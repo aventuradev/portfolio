@@ -1,0 +1,375 @@
+.chat {
+    background: rgb(250, 250, 250, .6);
+    border-radius: 1rem;
+    width: 90rem;
+    min-width: 35rem;
+}
+
+.chat .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3.5rem;
+}
+
+.chat .top .chat-contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.chat .top .chat-contact-info img {
+    width: 3rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.chat .top .clear-chat-button {
+    border: none;
+    background: transparent;
+    color: var(--light-secondary);
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: .4rem;
+    transition: var(--tran-04);
+}
+
+.chat .top .clear-chat-button:hover {
+    color: var(--secondary);
+}
+
+.chat .top .about-me-button {
+    border: none;
+    background: var(--white);
+    color: var(--secondary);
+    cursor: pointer;
+    border-radius: .4rem;
+    transition: var(--tran-04);
+    display: none;
+}
+
+.chat .top .about-me-button:hover {
+    color: var(--secondary);
+}
+
+.chat .chat-conversation {
+    background: rgb(254, 254, 254, 0.6);
+    height: calc(100% - 14rem);
+    max-height: 62rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--tran-04);
+}
+
+.chat .chat-conversation .message-bubble {
+    background: var(--light-primary);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem 0 0 0;
+    position: relative;
+    display: inline-block;
+    max-width: 60rem;
+    align-self: flex-start;
+}
+
+.chat .chat-conversation .message-bubble:nth-last-child(1) {
+    margin-bottom: 5rem;
+}
+
+.chat .chat-conversation .message-bubble::before {
+    content: " ";
+    position: absolute;
+    background-color: var(--light-primary);
+    width: 1rem;
+    height: 2rem;
+    bottom: -.9rem;
+    left: 3rem;
+    transform: rotate(60deg);
+    transition: var(--tran-04);
+}
+
+.chat .chat-conversation .message-bubble.viewer {
+    background: var(--light-secondary);
+    align-self: flex-end;
+    color: var(--white);
+}
+
+.chat .chat-conversation .message-bubble.viewer::before {
+    background-color: var(--light-secondary);
+    right: 3rem;
+    left: inherit;
+    transform: rotate(120deg);
+    transition: var(--tran-04);
+}
+
+.typing-loading {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.chat .bottom {
+    height: 8rem;
+    display: grid;
+    place-items: center;
+    border-top: .1rem solid var(--light-blue);
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: space-around;
+    transition: var(--tran-04);
+}
+
+.chat .bottom .input-bubble {
+    position: relative;
+    background: var(--white);
+    border-radius: .5rem;
+    padding: .5rem 1.8rem;
+    letter-spacing: 0;
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: .5rem;
+    cursor: pointer;
+    transition: var(--tran-04);
+}
+
+.chat .bottom .input-bubble::before {
+    content: " ";
+    position: absolute;
+    background-color: var(--white);
+    width: 1rem;
+    height: 2rem;
+    top: 65%;
+    left: 86%;
+    transform: rotate(50deg);
+    transition: var(--tran-04);
+}
+
+.chat .bottom .input-bubble:hover {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.chat .bottom .input-bubble:hover::before {
+    background: var(--secondary);
+}
+
+.chat .message-bubble .project-image {
+    width: 100%;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+}
+
+.chat .message-bubble .project-button {
+    border: none;
+    width: 100%;
+    height: 4rem;
+    border-radius: .5rem;
+    background: var(--white);
+    color: var(--secondary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--tran-04);
+}
+
+.chat .message-bubble .project-button:hover {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.chat .bottom .bottom-actions {
+    display: none;
+}
+
+.chat .bottom .bottom-actions button {
+    font-family: 'Montserrat';
+    width: 19.5rem;
+    margin: .5rem 0;
+    border: none;
+    padding: .5rem 3rem;
+    border-radius: .5rem;
+    background: var(--light-secondary);
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1.8rem;
+    letter-spacing: 0;
+    cursor: pointer;
+    transition: var(--tran-04);
+}
+
+.chat .bottom .bottom-actions button:hover {
+    background: var(--white);
+    color: var(--secondary);
+}
+
+
+.project-modal {
+    position: absolute;
+    background: var(--white);
+    width: .1%;
+    height: .1%;
+    bottom: 8.4rem;
+    left: 0;
+    z-index: 2;
+    border-radius: 1rem;
+    transition: var(--tran-05);
+    opacity: 0;
+    overflow-y: scroll;
+}
+
+.project-modal .modal-content {
+    display: none;
+    opacity: 0;
+    transform: var(--tran-05);
+}
+
+.project-modal.show {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: none;
+}
+
+.project-modal.show .top {
+    background: var(--light-gray);
+}
+
+.project-modal.show .top .modal-close-button {
+    position: absolute;
+    right: 2rem;
+    border: none;
+    background: transparent;
+    color: var(--light-secondary);
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: .4rem;
+    transition: var(--tran-04);
+    font-size: 2.6rem;
+}
+
+.project-modal.show .modal-content {
+    padding: 2rem 3rem;
+    display: block;
+    opacity: 1;
+    height: 65rem;
+    overflow: scroll;
+}
+
+.project-modal.show .modal-content .project-features {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    max-width: 70rem;
+
+}
+
+.project-modal.show .modal-content .project-features .feature {
+    margin-top: 1.5rem;
+}
+
+.project-modal.show .modal-content .project-features .feature .feature-images {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.project-modal.show .modal-content .project-features .feature .feature-images img {
+    width: 18rem;
+
+}
+
+.project-modal .project-image {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.project-modal.show::-webkit-scrollbar {
+    width: 0;
+}
+
+.project-modal.show .modal-content::-webkit-scrollbar {
+    width: 1rem;
+}
+
+
+@media screen and (max-width: 83rem) {
+    .clear-chat-button,
+    .chat .bottom .input-bubble,
+    .chat .bottom .bottom-actions .bottom-actions-open,
+    .chat .bottom.open .bottom-actions .bottom-actions-close {
+        display: none;
+    }
+
+    .chat {
+        width: 90%;
+        height: 85vh;
+        margin-top: 2.5rem;
+        position: fixed;
+    }
+
+    .chat .top {
+        display: flex;
+        padding: 0 3rem;
+        justify-content: space-between;
+    }
+
+    .chat .top .about-me-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        color: var(--light-secondary);
+    }
+
+    .chat .chat-conversation.bottom-open {
+        height: calc(100% - 38rem);
+    }
+
+    .chat .bottom.open {
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    .chat .bottom.open .input-bubble {
+        display: block;
+    }
+
+    .chat .bottom .input-bubble {
+        width: 16rem;
+        text-align: center;
+    }
+
+    .chat .bottom.open .bottom-actions {
+        margin-bottom: 2rem;
+    }
+
+    .chat .bottom .bottom-actions,
+    .chat .bottom .bottom-actions .bottom-actions-close {
+        transition: var(--tran-05);
+        display: block;
+    }
+
+    .chat .bottom.open .bottom-actions .bottom-actions-open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-modal.show .modal-content {
+        padding: 2rem 3rem;
+        display: block;
+        opacity: 1;
+        height: 59rem;
+        overflow: scroll;
+    }
+
+}
+
