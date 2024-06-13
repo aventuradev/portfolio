@@ -6,7 +6,7 @@ import { Interaction } from '../../types/types';
 import { FaCircleInfo } from "react-icons/fa6";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { ProjectModal } from './ProjectModal';
-import { projectMeniiu, projectMeniiuPortal } from './Projects';
+import { projectMeniiu, projectMeniiuPortal, projectCDC } from './Projects';
 
 export const Chat = () => {
   const chatRef = useRef() as React.MutableRefObject<HTMLDivElement>;
@@ -24,6 +24,16 @@ export const Chat = () => {
   const handleClearChat = (): void => {
     clearChat();
     handleWelcomeMessage(500, true);
+  }
+
+  const activeProject = {
+    title: project === 'meniiu'
+      ? projectMeniiu()[0] : project === 'portal'
+        ? projectMeniiuPortal()[0] : projectCDC()[0],
+    text: project === 'meniiu'
+      ? projectMeniiu()[1] : project === 'meniiu'
+        ? projectMeniiuPortal()[1] : projectCDC()[1]
+
   }
 
   const sendAnswerMessage = (message: Interaction, sender: string, time: number = 500): void => {
@@ -111,9 +121,9 @@ export const Chat = () => {
       <ProjectModal
         show={showProjectModal}
         setShow={setShowProjectModal}
-        setProject={setProject} title={project === 'meniiu' ? projectMeniiu()[0] : projectMeniiuPortal()[0]}
+        setProject={setProject} title={activeProject.title}
       >
-        {project === 'meniiu' ? projectMeniiu()[1] : projectMeniiuPortal()[1]}
+        {activeProject.text}
       </ProjectModal>
     </div>
   )

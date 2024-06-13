@@ -1,13 +1,14 @@
 // import meniiuProjectCover from '../assets/meniiu-project.png'
 import meniiuProjectCover from '../../assets/meniiu-project.png'
 import meniiuPortalProjectCover from '../../assets/meniiu-portal-banner.png'
+import CDCProjectCover from '../../assets/CDC.jpg'
 
 export const projectMeniiu = (): [string, JSX.Element] => {
     return [
         'meniiu Digital',
         <>
             <img className='project-image' src={meniiuProjectCover} alt="project image" />
-            <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
+            <small><i>Stack: <b>React, Context, Redux, Firebase, CSS</b> </i></small><br /><br />
             <p><b>meniiu is an administrative web platform</b> for gastronomic business 🍔 🍣 🍝 where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos and descriptions.</p><br />
             <p>Businesses can also centralize all communication channels, such as Instagram, Facebook, WhatsApp, etc., so that their customers can contact, make suggestions, follow, locate the business, and place orders that go directly to their WhatsApp.</p><br />
             <p><b>Currently used by multiple businesses</b>, handling the reception of hundreds of orders from their customers monthly and taking advantage of its multiple features. <a href="https://meniiu.com/#/Demo" target="_blank"><b>👉🏾 Try Demo here</b>.</a></p> <br />
@@ -51,7 +52,7 @@ export const projectMeniiuPortal = (): [string, JSX.Element] => {
         'meniiu Portal',
         <>
             <img className='project-image' src={meniiuPortalProjectCover} alt="project image" />
-            <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
+            <small><i>Stack: <b>React, Firebase, CSS</b> </i></small><br /><br />
             <p>Business has complete control of their meniiu thanks to the <b>meniiu Business Portal</b> that can be accessed via computer 💻 or mobile 📱 to:</p>
             <ul>
                 <li>Customize how the menu looks.</li>
@@ -81,6 +82,49 @@ export const projectMeniiuPortal = (): [string, JSX.Element] => {
                         <img src='https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2Fbeaabdc6-4eb8-4605-be78-ae329f4b7c40%2FUntitled.png?table=block&id=7ec69665-f2d8-441f-b212-79813bf3719c&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=1480&userId=&cache=v2' alt="" />
                         <img src="https://clean-condition-bd4.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F9641a867-3fa6-42c1-8471-85c7ae31f067%2Fb17f8d25-7936-4db9-ba0c-4aaf37475cd0%2FUntitled.png?table=block&id=4e9513e9-b2a4-4cd6-b064-77fc3ee1f963&spaceId=9641a867-3fa6-42c1-8471-85c7ae31f067&width=1490&userId=&cache=v2" alt="" />
                     </div>
+                </div>
+            </div>
+        </>
+    ]
+}
+export const projectCDC = (): [string, JSX.Element] => {
+    return [
+        'Dominican Cleveland Club Website',
+        <>
+            <img className='project-image' src={CDCProjectCover} alt="project image" />
+            <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
+            <p>The official website for the <b>Dominican Cleveland Club</b> serves as a comprehensive digital platform designed to connect and engage the Dominican community in Cleveland. This project highlights my expertise in web development, user experience design, and community-focused solutions.</p>
+            <br /><a href="https://clubdominicanocleveland.org" target="_blank"><b>👉🏾 Check website here</b>.</a>
+            <div className="project-features">
+                <div className="feature">
+                    <b>📄 Basic Information</b><br />
+                    {/* <small>The portal's compatibility with both computers and mobile devices adds an extra layer of convenience, allowing business owners and managers to manage their menus anytime, anywhere. This flexibility is particularly valuable in the fast-paced and dynamic restaurant industry, where adaptability is key to staying competitive.</small> */}
+                    <small><p>
+                        <b>About:</b> Detailed information about the Dominican Cleveland Club, its mission, history, and values. This section provides visitors with a deep understanding of the club's purpose and significance within the community.
+                    </p></small>
+                    <small><p>
+                        <b>Key Areas:</b> Highlighting the club’s core areas of focus, including cultural events, community outreach, educational programs, and social activities. This section showcases the diverse range of initiatives and services offered by the club.
+                    </p></small>
+                    <small><p>
+                        <b>Contact:</b> Easy-to-find contact information, including email addresses, phone numbers, and a contact form, enabling visitors to reach out to the club for inquiries, support, or collaboration opportunities.
+                    </p></small>
+                </div>
+                <div className="feature">
+                    <b>🔐 Authentication</b><br />
+                    <small>Secure user registration and login system allowing members to create and manage their profiles. This feature ensures that members can access exclusive content and participate in club activities.</small>
+                </div>
+                <div className="feature">
+                    <b>📅 Events Manager</b><br />
+                    <small>A dynamic events management system enabling administrators to create, edit, and promote events. This feature includes event details, registration options, and calendar integration, making it simple for members to stay updated on upcoming events and activities.</small>
+                </div>
+                <div className="feature">
+                    <b>📥 Volunteer Form</b><br />
+                    <small>An intuitive volunteer form that allows community members to sign up for volunteer opportunities. This feature streamlines the process of recruiting and organizing volunteers for various events and initiatives, fostering community involvement and support.</small>
+                </div>
+                <div className="feature">
+                    <b>Project Impact</b><br />
+                    <small>This website plays a crucial role in enhancing communication, engagement, and participation within the Dominican community in Cleveland. By providing a centralized platform for information, events, and volunteer opportunities, the Dominican Cleveland Club website strengthens community ties and supports the club’s mission of cultural preservation and community service.</small>
+                    
                 </div>
             </div>
         </>

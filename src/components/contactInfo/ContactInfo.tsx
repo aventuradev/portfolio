@@ -48,7 +48,7 @@ export const ContactInfo = () => {
         {/* ABOUT  */}
         <div className="about">
           <p className='info-title'>About</p>
-          <p><b>With 4 years of experience </b>developing and designing web apps using <b>Javascript and React</b>, also with backend and database knowledge using <b>NodeJs, SQL Server and Firebase.</b> </p>
+          <p><b>With 4 years of experience </b>developing and designing web apps using <b>Javascript, Typescript and React</b>, also with backend and database knowledge using <b>NodeJs, SQL Server and Firebase.</b> </p>
         </div>
         <div className='divider'></div>
         <div className="skills">

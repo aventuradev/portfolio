@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Interaction, chatMessage } from "../types/types";
 import meniiuProjectCover from '../assets/meniiu-project.png'
 import meniiuPortalProjectCover from '../assets/meniiu-portal-banner.png'
+import CDCProjectCover from '../assets/CDC.jpg'
 
 
 export const useChat = (chatRef: React.MutableRefObject<HTMLDivElement>) => {
@@ -98,7 +99,7 @@ export const useChat = (chatRef: React.MutableRefObject<HTMLDivElement>) => {
                     <img className='project-image' src={meniiuProjectCover} alt="project image" />
                     <p><b>meniiu</b> is an administrative web platform for gastronomic 🍔 🍣 🍝 business, optimized and focused for intuitive and efficient use on mobile devices, where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos, descriptions and more.</p> <br />
                     <p><b>Currently used by multiple businesses</b>, handling the reception of hundreds of orders from their customers monthly and taking advantage of its multiple features. <a href="https://meniiu.com/#/Demo" target="_blank"><b>👉🏾 Try Demo here</b>.</a></p> <br />
-                    <small><i>Stack: <b>React, Redux, Firebase, Bootstrap</b> </i></small><br /><br />
+                    <small><i>Stack: <b>React, Context, Redux, Firebase, Bootstrap</b> </i></small><br /><br />
                     <button className='project-button' onClick={() => { setShowProjectModal(!showProjectModal); setProject('meniiu') }}>Check more info</button>
                 </div>,
                 <div>
@@ -114,7 +115,21 @@ export const useChat = (chatRef: React.MutableRefObject<HTMLDivElement>) => {
                     <a href="https://meniiu.github.io" target="_blank"><b>👉🏾 Check portal here</b>.</a><br/><br/>
                     <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
                     <button className='project-button' onClick={() => { setShowProjectModal(!showProjectModal); setProject('portal') }}>Check more info</button>
-                </div>
+                </div>,
+                <div>
+                    <img className='project-image' src={CDCProjectCover} alt="project image" />
+                    <p>The official website for the <b>Dominican Cleveland Club</b> serves as a comprehensive digital platform designed to connect and engage the Dominican community in Cleveland. This project highlights my expertise in web development, user experience design, and community-focused solutions.</p>
+                    <p>Features:</p>
+                    <ul>
+                        <li>Basic Information.</li>
+                        <li>Authetication.</li>
+                        <li>Events manager.</li>
+                        <li>Volunteer form.</li>
+                    </ul>
+                    <a href="https://clubdominicanocleveland.org" target="_blank"><b>👉🏾 Check website here</b>.</a><br/><br/>
+                    <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
+                    <button className='project-button' onClick={() => { setShowProjectModal(!showProjectModal); setProject('DCD') }}>Check more info</button>
+                </div>,
             ]
         },
         {
@@ -140,6 +155,8 @@ export const useChat = (chatRef: React.MutableRefObject<HTMLDivElement>) => {
             response: [
                 <p>Sure. I've dedicated time to earn certifications such as:</p>,
                 <div>
+                    <b>Typescript Course: Complete guide</b>
+                    <p>🏫 Devtalles | 🗓️ 2024 | <i><a href="https://cursos.devtalles.com/certificates/ycnq4p98qt/" target="_blank">🔗 Show credential</a></i></p><br />
                     <b>React.js Course: Professional State Management</b>
                     <p>🏫 Platzi | 🗓️ 2022 | <i><a href="https://platzi.com/p/aventuradev/curso/2597-react-estado/diploma/detalle/" target="_blank">🔗 Show credential</a></i></p><br />
                     <b>React.js Course: Render and Composition Patterns</b>
