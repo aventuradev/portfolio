@@ -112,7 +112,12 @@ export const useChat = (chatRef: React.MutableRefObject<HTMLDivElement>) => {
                         <li>Schedule management for order taking.</li>
                         <li>View monthly reports, and more.</li>
                     </ul>
-                    <a href="https://meniiu.github.io" target="_blank"><b>👉🏾 Check portal here</b>.</a><br/><br/>
+                    <a href="https://meniiu.github.io" target="_blank"><b>👉🏾 Check portal here</b>.</a>
+                    <ul>
+                        <li><b>Email:</b> e@j.com</li>
+                        <li><b>Password:</b> 123456</li>
+                        <p>Every change will be reflected on the <a href="https://meniiu.com/#/Ejemplo" target="_blank"><b>👉🏾 meniiu client side</b>.</a> </p>
+                    </ul>
                     <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
                     <button className='project-button' onClick={() => { setShowProjectModal(!showProjectModal); setProject('portal') }}>Check more info</button>
                 </div>,
@@ -128,7 +133,7 @@ export const useChat = (chatRef: React.MutableRefObject<HTMLDivElement>) => {
                     </ul>
                     <a href="https://clubdominicanocleveland.org" target="_blank"><b>👉🏾 Check website here</b>.</a><br/><br/>
                     <small><i>Stack: <b>React, Zustand, Firebase, CSS</b> </i></small><br /><br />
-                    <button className='project-button' onClick={() => { setShowProjectModal(!showProjectModal); setProject('DCD') }}>Check more info</button>
+                    <button className='project-button' onClick={() => { setShowProjectModal(!showProjectModal); setProject('CDC') }}>Check more info</button>
                 </div>,
             ]
         },

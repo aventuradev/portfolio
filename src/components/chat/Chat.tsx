@@ -25,14 +25,15 @@ export const Chat = () => {
     clearChat();
     handleWelcomeMessage(500, true);
   }
-
   const activeProject = {
-    title: project === 'meniiu'
-      ? projectMeniiu()[0] : project === 'portal'
-        ? projectMeniiuPortal()[0] : projectCDC()[0],
-    text: project === 'meniiu'
-      ? projectMeniiu()[1] : project === 'meniiu'
-        ? projectMeniiuPortal()[1] : projectCDC()[1]
+    title: project === 'meniiu' ? projectMeniiu()[0]
+      : project === 'portal' ? projectMeniiuPortal()[0]
+        : project === 'CDC' ? projectCDC()[0]
+          : '',
+    text: project === 'meniiu' ? projectMeniiu()[1]
+      : project === 'portal' ? projectMeniiuPortal()[1]
+        : project === 'CDC' ? projectCDC()[1]
+          : <></>
 
   }
 

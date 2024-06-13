@@ -12,6 +12,11 @@ export const projectMeniiu = (): [string, JSX.Element] => {
             <p><b>meniiu is an administrative web platform</b> for gastronomic business 🍔 🍣 🍝 where they can have their own virtual establishment 🤳🏽. This allows them to present their products dynamically, with prices, photos and descriptions.</p><br />
             <p>Businesses can also centralize all communication channels, such as Instagram, Facebook, WhatsApp, etc., so that their customers can contact, make suggestions, follow, locate the business, and place orders that go directly to their WhatsApp.</p><br />
             <p><b>Currently used by multiple businesses</b>, handling the reception of hundreds of orders from their customers monthly and taking advantage of its multiple features. <a href="https://meniiu.com/#/Demo" target="_blank"><b>👉🏾 Try Demo here</b>.</a></p> <br />
+            <ul>
+                <li><b>Email:</b> e@j.com</li>
+                <li><b>Password:</b> 123456</li>
+                <p>Every change will be reflected on the <a href="https://meniiu.com/#/Ejemplo" target="_blank"><b>👉🏾 meniiu client side</b>.</a> </p>
+            </ul>
             <h3>Features</h3>
             <div className="project-features">
                 <div className="feature">
@@ -61,6 +66,9 @@ export const projectMeniiuPortal = (): [string, JSX.Element] => {
                 <li>Schedule management for order taking.</li>
                 <li>View monthly reports, and more.</li>
             </ul>
+            <p><b>Email:</b> e@j.com</p>
+            <p><b>Password:</b> 123456</p>
+            <p>Every change will be reflected on the <a href="https://meniiu.com/#/Ejemplo" target="_blank"><b>👉🏾 meniiu client side</b>.</a> </p>
             <div className="project-features">
                 <div className="feature">
                     <b>⚙️ Configurations</b><br />
@@ -124,7 +132,7 @@ export const projectCDC = (): [string, JSX.Element] => {
                 <div className="feature">
                     <b>Project Impact</b><br />
                     <small>This website plays a crucial role in enhancing communication, engagement, and participation within the Dominican community in Cleveland. By providing a centralized platform for information, events, and volunteer opportunities, the Dominican Cleveland Club website strengthens community ties and supports the club’s mission of cultural preservation and community service.</small>
-                    
+
                 </div>
             </div>
         </>
