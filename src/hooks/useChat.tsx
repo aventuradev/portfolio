@@ -64,29 +64,43 @@ export const useChat = (chatRef: React.MutableRefObject<HTMLDivElement>) => {
             response: [
                 <p>Absolutely! Here is a lowdown on my work journey:</p>,
                 <div>
-                    <h2>👨🏾‍💻 Web Software Developer</h2>
-                    <p>Instituto Dominicano de las Telecomunicaciones - INDOTEL</p>
-                    <small>🗓️ Oct 2020 - Present | 📍 Santo Domingo, Dominican Republic</small><br /><br />
+                    <h2>👨🏾‍💻 Web Frontend Software Developer</h2>
+                    <p>Seguros Reservas</p>
+                    <small>🗓️ Nov 2024 - Present | 📍 Santo Domingo, Dominican Republic</small><br /><br />
                     <p>Some project that I've worked on:</p><br />
-                    <b>🖥️ Intranet Project— July, 2022 - October, 2023</b>
+                    <b>🖥️ Portal Intermediario Project — November, 2024 - Febraury, 2025</b>
                     <ul>
-                        <li>Improve gathering and management of information between departments by developing a web platform to manage internal business processes and redesigning and integrating available assets into the new platform.</li>
-                        <li>Achieved a 43% reduction in daily average support cases by improving performance and eliminating bugs in existing applications.</li>
-                        <li>Enhanced productivity in current processes by 34% through the development of new applications.</li>
+                        <li>Developed and integrated key user interfaces, ensuring seamless communication with provided APIs.</li>
+                        <li>Improved maintainability by implementing best practices in Angular development.</li>
+                        <li>Collaborated closely with backend teams to ensure data consistency and efficiency.</li>
+                        <li>Utilized Git for version control and Azure DevOps for CI/CD, enabling efficient collaboration and deployment.</li>
                     </ul>
-                    <i>Tech Stack: React, Express, Node, SQL Server.</i><br /><br />
-                    <b>🖥️ Series Negadas Project — January 2022 - April 2022</b>
-                    <ul>
-                        <li>Developed a web platform to consult IMEI status on the GSMA and national telecommunication provider’s record, Benefiting local businesses and the general public by enabling them to verify their mobile device's legitimacy.</li>
-                        <li>Resolved 15% of design issues by simplifying the user process for requesting and obtaining desired information.</li>
-                    </ul>
-                    <i>Tech Stack: React, Express, Node, SQL Server.</i><br /><br />
-                    <b>📱 Mobile App INDOTEL Project — January 2021 - May, 2023</b>
-                    <ul>
-                        <li>Developed an Institutional mobile app in order to improve some services’ accessibility, display relevant institutional information, and increase user interaction with the institution.</li>
-                    </ul>
-                    <i>Tech Stack: React Native, Node, Express, SQL Server.</i>
-                </div>
+                    <i>Tech Stack: Angular 18, TypeScript.</i><br /><br />
+                </div>,
+                  <div>
+                  <h2>👨🏾‍💻 Web Software Developer</h2>
+                  <p>Instituto Dominicano de las Telecomunicaciones - INDOTEL</p>
+                  <small>🗓️ Oct 2020 - Oct 2024 | 📍 Santo Domingo, Dominican Republic</small><br /><br />
+                  <p>Some project that I've worked on:</p><br />
+                  <b>🖥️ Intranet Project — July, 2022 - October, 2023</b>
+                  <ul>
+                      <li>Improve gathering and management of information between departments by developing a web platform to manage internal business processes and redesigning and integrating available assets into the new platform.</li>
+                      <li>Achieved a 43% reduction in daily average support cases by improving performance and eliminating bugs in existing applications.</li>
+                      <li>Enhanced productivity in current processes by 34% through the development of new applications.</li>
+                  </ul>
+                  <i>Tech Stack: React, Express, Node, SQL Server.</i><br /><br />
+                  <b>🖥️ Series Negadas Project — January 2022 - April 2022</b>
+                  <ul>
+                      <li>Developed a web platform to consult IMEI status on the GSMA and national telecommunication provider’s record, Benefiting local businesses and the general public by enabling them to verify their mobile device's legitimacy.</li>
+                      <li>Resolved 15% of design issues by simplifying the user process for requesting and obtaining desired information.</li>
+                  </ul>
+                  <i>Tech Stack: React, Express, Node, SQL Server.</i><br /><br />
+                  <b>📱 Mobile App INDOTEL Project — January 2021 - May, 2023</b>
+                  <ul>
+                      <li>Developed an Institutional mobile app in order to improve some services’ accessibility, display relevant institutional information, and increase user interaction with the institution.</li>
+                  </ul>
+                  <i>Tech Stack: React Native, Node, Express, SQL Server.</i>
+              </div>
             ]
         },
         {
